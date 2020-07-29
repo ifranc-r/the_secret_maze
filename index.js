@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 const beginingRoutes = require('./routes/begining');
 const first_room = require('./routes/first_room');
@@ -27,4 +28,4 @@ app.use((req, res, next) => {
     res.status(404).send('<h1>Page not found</h1>');
 });
 
-app.listen(3000);
+app.listen(PORT);
