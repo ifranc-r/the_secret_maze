@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+	text-decoration-color: green;
+	color:#008F11;
+	width: auto;
+	height: auto;
+}
+
+a {
+  text-decoration:none;
+	decoration: none;
+	color: green;
+}
+
+a:hover {
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.story-pre {
+	color:floralwhite;
+	font-size:  1.6em ;
+}
+
+.story-before {
+	display: none;
+}
+
+.container {
+	width: 100%;
+	resize:both;
+	overflow:auto;
+}
+
+.text {
+	margin: 16px;
+	margin-top: 16px;
+	font-size: 1.4em;
+	text-align: center;
+}
+
+#story-div, .story-before{
+	margin-left: 10%;
+  margin-top: 25%;
+}
+
+.revenir-pre {
+	margin: 16px;
+	margin-top: 60px;
+	margin-left: 8%;
+	margin-bottom: 10%;
+
+	font-size: 1.4em;
+	text-align: left;
+	font-family: game_over;
+	letter-spacing: -5px;
+}
+
+#revenir-div {
+	margin-top: 20%;
+	margin-left: 4%;
+}
+
+.revenir-pre:hover, .revenir-pre:active{
+	color: yellow;
+}
+#game_over{
+	color: green;
+}
+#ouvrir1:hover, #ouvrir1:active,
+#oui:hover, #oui:active ,
+#non:hover, #non:active ,
+#restart:hover, #restart:active,
+#open:hover, #open:active,
+#enter:hover, #enter:active,
+#tv:hover, #tv:active,
+#info:hover, #info:active{
+	color: yellow;
+}
+
+
+.third_door:hover, .third_door:active{
+	color: yellow;
+}
+
+@media only screen and (max-width:360px) {
+.story-pre {
+	font-size:  .7em ;
+}
+	.revenir-pre {
+		font-size: 0.9em;
+	}
+}
+@media only screen and (min-width:360px) and (max-width:450px){
+	.story-pre {
+		font-size:  .8em ;
+	}
+		.revenir-pre {
+			font-size: 1em;
+		}
+}
+@media only screen and (max-width:570px)
+and (min-width:450px){
+	.story-pre {
+		font-size:  1em ;
+	}
+	.revenir-pre {
+		font-size: 1.3em;
+	}
+}
+
+@media only screen and (max-width:970px)
+and (min-width:570px){
+	.story-pre {
+		font-size:  1.3em ;
+	}
+	.revenir-pre {
+		font-size: 1.6em;
+	}
+}
+
+@media only screen and (min-width:970px){
+	.story-pre {
+		font-size:  1.2em ;
+	}
+	.container {
+		width: 100%;
+	}
+	#story-div, .story-before {
+			margin-left: 2%;
+		  margin-top: 3%;
+	}
+
+	#revenir-div {
+		margin-top: 2%;
+		margin-left: 2%;
+	}
+}
