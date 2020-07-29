@@ -117,10 +117,10 @@ $("#form").submit( function( event ) {
 
 $('#video').trigger('pause');
 
-// $('#story-div').css("display","none");
-// $('#story17-div').css("display","block");
-// $('#video').show();
-// $('#video').trigger('play');
+$('#story-div').css("display","none");
+$('#story17-div').css("display","block");
+$('#video').show();
+$('#video').trigger('play');
 
   $('#video').on('ended', function(){
     $('#video').hide()
