@@ -23,6 +23,17 @@ a:hover {
     text-decoration:none;
     cursor:pointer;
 }
+#info{
+	display: none;
+}
+#video {
+	position: absolute;
+	display: none;
+	top: 44%;
+	left: 7%;
+	width: 340px;
+	height:240px;
+}
 
 .story-pre {
 	color:floralwhite;
@@ -47,7 +58,7 @@ a:hover {
 }
 
 #story-div, .story-before{
-	margin-left: 10%;
+	margin-left: 8%;
   margin-top: 25%;
 }
 
@@ -64,8 +75,8 @@ a:hover {
 }
 
 #revenir-div {
-	margin-top: 20%;
-	margin-left: 4%;
+	margin-top: 15%;
+	margin-left: 13%;
 }
 
 .revenir-pre:hover, .revenir-pre:active{
@@ -97,24 +108,62 @@ a:hover {
 	.revenir-pre {
 		font-size: 0.9em;
 	}
+	#video {
+		top: 40%;
+		left: 22%;
+		width: 200px;
+		height:140px;
+	}
 }
-@media only screen and (min-width:360px) and (max-width:450px){
+@media only screen and (min-width:360px) and (max-width:414px){
 	.story-pre {
 		font-size:  .8em ;
 	}
 		.revenir-pre {
 			font-size: 1em;
 		}
+		#video {
+			top: 43%;
+			left: 19%;
+			width: 230px;
+			height: 200px;
+		}
+		@media only screen and (max-height:842px)
+		and (min-height:731px){
+			#video {
+				top: 34%;
+				left: 18%;
+				width: 240px;
+				height: 200px;
+			}
+		}
+
+		@media only screen and (max-height:731px)
+		and (min-height:612px){
+			#video {
+				top: 41%;
+				left: 18%;
+				width: 240px;
+				height: 200px;
+			}
+		}
 }
 @media only screen and (max-width:570px)
-and (min-width:450px){
+and (min-width:414px){
 	.story-pre {
-		font-size:  1em ;
+		font-size:  .9em ;
 	}
 	.revenir-pre {
-		font-size: 1.3em;
+		font-size: 1.1em;
+	}
+	#video {
+		top: 42%;
+		left: 19%;
+		width: 260px;
+		height: 200px;
 	}
 }
+
 
 @media only screen and (max-width:970px)
 and (min-width:570px){
@@ -142,4 +191,5 @@ and (min-width:570px){
 		margin-top: 2%;
 		margin-left: 2%;
 	}
+
 }

@@ -40,6 +40,8 @@ $("#ouvrir1").click(function() {
   }, 3000);
 });
 
+
+
 $("#non").click(function() {
   $('#story5-div').css("display","none");
   $('#story6-div').css("display","block");
@@ -90,6 +92,8 @@ $("#tv").click(function() {
             setTimeout(function() {
               $('#story16-div').css("display","none");
               $('#story17-div').css("display","block");
+              $('#video').show();
+              $('#video').trigger('play');
             }, 1000);
           }, 1000);
         }, 1000);
@@ -110,3 +114,15 @@ $("#form").submit( function( event ) {
   $("#merci").css('display', 'block');
   return
 });
+
+$('#video').trigger('pause');
+
+// $('#story-div').css("display","none");
+// $('#story17-div').css("display","block");
+// $('#video').show();
+// $('#video').trigger('play');
+
+  $('#video').on('ended', function(){
+    $('#video').hide()
+    $('#info').css("display","block");
+  });
