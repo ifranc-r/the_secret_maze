@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const redis = require('redis');
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,6 +14,17 @@ const third_room = require('./routes/third_room');
 const meuble_et_clef = require('./routes/meuble_et_clef');
 const add_custumer = require('./controllers/add_custumer');
 
+
+
+let client = redis.createClient();
+
+client.on("error", function(error) {
+  console.error(error);
+});
+client.on("connected", function() {
+});
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname,'public')));
 
@@ -22,7 +35,9 @@ app.use('/third_room', third_room);
 app.use('/meuble_et_clef', meuble_et_clef);
 app.use(meuble_et_clef);
 
-app.get('/submit_add_custumer', add_custumer.add_custumer);
+app.get('/submit_add_custumer', (req, res) => {
+  client.lpush('user', JSON.stringify(req.query, null, 4));
+});
 
 app.use((req, res, next) => {
     res.status(404).send('<h1>Page not found</h1>');

@@ -101,6 +101,9 @@ $("#tv").click(function() {
     }, 1000);
   }, 1000);
 });
+$('#story2-div').css("display","none");
+$('#info-div').css("display","block");
+$('.revenir-pre').css("display","block");
 
 $("#info").click(function() {
   $('#story17-div').css("display","none");
