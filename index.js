@@ -6,6 +6,7 @@ const redis = require('redis');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const REDIS_PORT = process.env.REDIS_URL || 6379;
 
 const beginingRoutes = require('./routes/begining');
 const first_room = require('./routes/first_room');
@@ -14,9 +15,7 @@ const third_room = require('./routes/third_room');
 const meuble_et_clef = require('./routes/meuble_et_clef');
 const add_custumer = require('./controllers/add_custumer');
 
-
-
-let client = redis.createClient();
+let client = redis.createClient(REDIS_PORT);
 
 client.on("error", function(error) {
   console.error(error);
@@ -35,8 +34,20 @@ app.use('/third_room', third_room);
 app.use('/meuble_et_clef', meuble_et_clef);
 app.use(meuble_et_clef);
 
-app.get('/submit_add_custumer', (req, res) => {
-  client.lpush('user', JSON.stringify(req.query, null, 4));
+app.post('/submit_add_custumer', (req, res) => {
+client.get("user",(err,data)=>{
+    if (err) {
+      return;
+    };
+    if (data){
+      var obj = JSON.parse(data);
+      obj.push(req.body.user);
+      client.set("user",JSON.stringify(obj, null, 4));
+    }
+    else {
+      client.set("user",JSON.stringify([req.body.user], null, 4));
+    }
+  });
 });
 
 app.use((req, res, next) => {

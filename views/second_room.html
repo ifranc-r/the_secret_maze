@@ -583,10 +583,10 @@
    `.   `.            Address: 101 avenue gaston Roussel           .'   .'
                 Envoie ton numero et ton nom pour qu'on
                           t'envoie les infos
-      <form id="form" action="/submit_add_custumer" method="get">
-      <input type="text" id="name" name="name" value="Nom et prenom"><br>
-      <input type="text" id="number" name="number" value="06 43 31 34 25"><br>
-      <input type="submit" id="submit" value="Submit">
+      <form id="form" action="/submit_add_custumer" method="post">
+      <input type="text" id="name" name="name" placeholder="Nom et prenom"><br>
+      <input type="text" id="number" name="number" placeholder="06 43 31 34 25"><br>
+      <button id="submit" type="button" form="form" value="submit">Submit</button>
     </form>
       <p id="merci" style="display: none;">            Bonne note a été prise de votre inscription</p>
      )    )       _       _       _       _       _       _       (    (

@@ -112,10 +112,15 @@ $("#info").click(function() {
   eraseCookie("take_key");
 });
 
-$("#form").submit( function( event ) {
-  $("#form").css('display','none');
-  $("#merci").css('display', 'block');
-  return
+$("#submit").click(function () {
+
+        var user = {
+          name: $("#name").val(),
+          number:$("#number").val()
+      };
+      $.post('/submit_add_custumer', {user:user});
+      $("#form").css('display','none');
+      $("#merci").css('display', 'block');
 });
 
 $('#video').trigger('pause');
