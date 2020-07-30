@@ -48,8 +48,8 @@ $("#non").click(function() {
 });
 
 $("#restart").click(function() {
-  $('#story6-div').css("display","none");
-  $('#story2-div').css("display","block");
+  document.location.href = '/';
+  eraseCookie("take_key");
 });
 
 $("#oui").click(function() {
